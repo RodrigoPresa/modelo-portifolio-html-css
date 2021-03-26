@@ -1,0 +1,230 @@
+/*
+Theme Name: Start sua carreira
+Theme URI: http://www.startsuacarreira.com.br
+Author: Kenzie Academy BR
+Author URI: https://kenzie.com.br;
+Description: Descrição do thema.
+Version: 1.0
+
+--------------------------------------------
+ESTRUTURA BASE
+--------------------------------------------
+**** DECLARAÇÃO DE VARIAVEIS
+**** ESTILOS GERAIS
+**** BODY
+**** HEADER
+**** FOOTER
+**** PÁGINA INICIAL
+**** EXTRAS
+**** @MEDIA
+*/
+
+/*ESTILOS GERAIS*/
+html, body, figure, img, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul,li, a,main{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.coluna{
+    flex-basis: 49%;
+}
+.hidden{
+    display: none;
+}
+/* VARIÁVEIS */
+:root{
+    --corBackgroundPrimaria: #45dbf6;
+    --corBackgroundSecundaria: #04133d;
+    --corBackgroundDark: #181616;
+    --corTextoPrimaria: #636363;
+    --corTextoSecundaria: #000;
+}
+
+/* HEADER */
+header{
+    background-color: var(--corBackgroundPrimaria);
+    padding: 30px 30px 0;
+}
+header .container{
+    background-color: #fff;
+}
+header .linha{
+    align-items: center;
+}
+header .coluna-esquerda{
+    flex-basis: 30%;
+}
+header .coluna-direita{
+    flex-basis: 60%;
+    text-align: center;
+    padding: 10px 0;
+}
+header .coluna img{
+    width: 100%;
+}
+header .coluna h1{
+    font-size: 1.5rem;
+    color: var(--corTextoSecundaria);
+}
+header .coluna p{
+    font-size: 1rem;
+    color: var(--corTextoPrimaria);
+}
+header .coluna ul{
+    margin-top: 16px;
+}
+header .coluna ul li{
+    margin-bottom: 12px;
+}
+header .coluna ul li a{
+    font-size: 1rem;
+    color: var(--corTextoSecundaria);
+}
+/* FOOTER */
+footer{
+    background-color: var(--corBackgroundSecundaria);
+}
+footer .container{
+    padding: 20px;
+}
+footer nav ul li a{
+    color: #fff;
+}
+footer nav .info-contato li{
+    margin: 15px;
+}
+footer nav .redes-sociais{
+    border-top: 1px solid rgb(255 255 255 / 20%);
+    margin: 20px 0 50px;
+    padding: 50px 0;
+    text-align: center;
+}
+footer nav .redes-sociais li{
+    margin: 10px 22px;
+    text-align: center;
+    display: inline-block;
+}
+footer nav .redes-sociais li a img{
+    width: 40px;
+}
+footer nav .redes-sociais li a p{
+    color: #fff;
+}
+
+/* PÁGINA INICIAL */
+main .coluna section{
+    border-bottom: 1px solid #d4e9ff;
+    color: var(--corTextoSecundaria);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+main .coluna section:last-child{
+    border-bottom: none;
+}
+main .coluna section h2{
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+main .coluna section p{
+    font-size: 0.9rem;
+    color: var(--corTextoPrimaria);
+    line-height: 1.5rem;
+}
+main .coluna section ul li{
+    margin-bottom: 12px;
+}
+main .coluna section ul li h3{
+    font-size: 1.1rem;
+}
+main .coluna section ul li strong{
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    margin: 5px 0 10px;
+}
+/* EXTRAS */
+.dark-mode .container{
+    position: relative;
+}
+label {
+    border: 1px solid #000;
+    background-color: var(--corBackgroundSecundaria);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 20px;
+    padding: 2px 2px;
+    border-radius: 10px;    
+    box-sizing: border-box;
+    cursor: pointer;
+}
+label span{
+    height: 14px;
+    width: 14px;
+    background-color: #d4e9ff;
+    display: block;
+    border-radius: 100%;
+    transition: all ease .3s;
+}
+.ativar-dark:checked ~ .dark-mode label{
+    background-color: #d4e9ff;
+}
+.ativar-dark:checked ~ .dark-mode label span{
+    background-color: var(--corBackgroundSecundaria);
+    transform: translateX(15px);
+    transition: all ease .3s;
+}
+.ativar-dark:checked ~ .dark-mode{
+    --corBackgroundPrimaria: #000;
+    --corBackgroundSecundaria: #000;
+    --corTextoPrimaria: #fff;
+    --corTextoSecundaria: #fff;
+}
+.ativar-dark:checked ~ .dark-mode .container{
+    background-color: var(--corBackgroundDark);
+}
+.ativar-dark:checked ~ .dark-mode main{
+    background-color: var(--corBackgroundPrimaria);
+}
+/* @MEDIA */
+@media only screen and (min-width: 768px){
+    
+    .container{
+        width: 100%;
+        max-width: 1125px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    .linha{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    header{
+        padding-top: 30px;
+    }
+    header .coluna img{
+        max-width: 250px;
+        border-radius: 100%;
+    }
+    header .coluna-direita{
+        flex-basis: 60%;
+        text-align: left;
+    }
+    main .coluna section,
+    main .coluna section:last-child{
+        border: 1px solid #d4e9ff;
+        min-height: 180px;
+    }
+    footer nav .redes-sociais{
+        display: flex;
+        justify-content: center;
+    }
+}
